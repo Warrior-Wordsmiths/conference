@@ -56,6 +56,13 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: var(--wp--preset--color--background);
             color: var(--wp--preset--color--foreground);
@@ -66,6 +73,9 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
         }
 
         /* Typography */
@@ -161,6 +171,8 @@
         .wp-site-blocks {
             padding-top: var(--wp--style--root--padding-top);
             padding-bottom: var(--wp--style--root--padding-bottom);
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .has-global-padding {
@@ -212,11 +224,16 @@
 
         .alignfull {
             width: 100%;
-            max-width: none;
+            max-width: 100%;
         }
 
         .has-text-align-center {
             text-align: center;
+        }
+
+        main {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* Background Colors */
@@ -285,6 +302,13 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             position: relative;
             z-index: 100;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .cta-banner.hidden {
+            display: none;
         }
 
         .cta-banner-content {
@@ -329,28 +353,15 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.3s ease;
             border: 2px solid var(--wp--preset--color--primary);
             display: inline-block;
             white-space: nowrap;
-        }
-
-        .cta-button:hover {
-            background-color: var(--wp--preset--color--cta-banner-dark);
-            border-color: var(--wp--preset--color--cta-banner-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .cta-button.secondary {
             background-color: transparent;
             color: var(--wp--preset--color--primary);
             border: 2px solid var(--wp--preset--color--primary);
-        }
-
-        .cta-button.secondary:hover {
-            background-color: var(--wp--preset--color--primary);
-            color: var(--wp--preset--color--background);
         }
 
         /* Navigation Styles */
@@ -361,6 +372,25 @@
             top: 0;
             z-index: 99;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--wp--preset--color--background);
+            font-size: 1.8rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .hamburger-menu:hover {
+            background-color: var(--wp--preset--color--cta-banner-dark);
+            color: var(--wp--preset--color--primary);
         }
 
         .main-navigation ul {
@@ -431,12 +461,8 @@
 
         /* Full-width footer */
         footer.wp-block-template-part {
-            width: 100vw;
+            width: 100%;
             position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
         }
 
         footer.wp-block-template-part .wp-block-group {
@@ -522,31 +548,69 @@
             }
 
             .cta-banner {
-                padding: 1rem 1rem;
+                padding: 0.75rem 1rem;
             }
 
             .cta-banner-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 0.5rem;
             }
 
             .cta-banner-text {
                 text-align: center;
             }
 
+            .cta-banner-text h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .cta-banner-text p {
+                font-size: 0.85rem;
+            }
+
             .cta-banner-actions {
                 width: 100%;
-                flex-direction: column;
+                flex-direction: row;
+                gap: 0.5rem;
+                justify-content: center;
             }
 
             .cta-button {
-                width: 100%;
+                width: auto;
                 text-align: center;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .main-navigation ul {
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .main-navigation ul.open {
+                max-height: 500px;
+            }
+
+            .main-navigation li {
+                width: 100%;
             }
 
             .main-navigation a {
-                padding: 0.875rem 1.25rem;
+                padding: 0.875rem 1.5rem;
                 font-size: 0.9rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .main-navigation a::after {
+                display: none;
             }
 
             .hero-section {
@@ -572,32 +636,30 @@
         }
 
         @media (max-width: 480px) {
-            .main-navigation ul {
+            .cta-banner {
+                padding: 0.6rem 0.75rem;
+            }
+
+            .cta-banner-actions {
                 flex-direction: column;
+            }
+
+            .cta-button {
                 width: 100%;
-            }
-
-            .main-navigation li {
-                width: 100%;
-            }
-
-            .main-navigation a {
-                padding: 1rem;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .cta-banner-text h3 {
-                font-size: 1.1rem;
-            }
-
-            .cta-banner-text p {
-                font-size: 0.85rem;
+                padding: 0.5rem 0.75rem;
+                font-size: 0.8rem;
             }
         }
 
         /* Smooth Scroll Behavior */
         html {
             scroll-behavior: smooth;
+            position: relative;
+        }
+
+        body {
+            position: relative;
+            overscroll-behavior: none;
         }
 
         /* Quick action cards */
@@ -753,6 +815,9 @@
 
         <!-- Navigation Menu -->
         <nav class="main-navigation">
+            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                ☰ Menu
+            </button>
             <ul>
                 <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
                 <li><a href="#registration" class="nav-link" data-page="registration">Registration</a></li>
@@ -787,7 +852,7 @@
                                 <div class="action-cards">
                                     <div class="action-card">
                                         <h3>Submit Your Paper</h3>
-                                        <p>Share your research on film, television, and media studies</p>
+                                        <p>Share your research on media! View requirements below.</p>
                                         <a href="mailto:Warriorwordsmiths@gmail.com?subject=Conference Paper Submission" class="cta-button">Submit Now</a>
                                     </div>
                                     <div class="action-card">
@@ -1035,6 +1100,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const pageSections = document.querySelectorAll('.page-section');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.main-navigation ul');
+            const ctaBanner = document.querySelector('.cta-banner');
+
+            // Hamburger menu toggle
+            if (hamburgerMenu) {
+                hamburgerMenu.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                });
+            }
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1055,6 +1130,18 @@
                     const targetSection = document.getElementById(targetPage + '-page');
                     if (targetSection) {
                         targetSection.classList.add('active');
+                    }
+
+                    // Show/hide CTA banner based on page
+                    if (targetPage === 'home') {
+                        ctaBanner.classList.remove('hidden');
+                    } else {
+                        ctaBanner.classList.add('hidden');
+                    }
+
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('open')) {
+                        navMenu.classList.remove('open');
                     }
 
                     // Scroll to top
