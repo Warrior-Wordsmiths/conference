@@ -1,0 +1,25 @@
+ your objective is to use the @references\STYLE-GUIDE-REFERENCE.md to create the html code for my webpage about a
+  conference named Media in full bloom. You will gain all the information you need about this project in
+  @references\2025CFP_Draft.md .  Here are general notes I want you to consider when creating this website:\
+  Title: Welcome to the 2026 Media in Full Bloom conference information and registration page!
+
+  Begin by placing the @assets\mfb_poster.png in the left side of the page. to the right you should start writing text. keep  
+  in mind this text will wrap on the webpage. the text you will write will be text you directly copy or slightly tweak from   
+  @references\2025CFP_Draft.md . The information will be in the following order:
+  General Information (date, time, place, keynote address, feature film, journal, campus, area, hotels and other
+  accommodations)
+
+  Registration information (Cost, description of what you get for the $35.00, where to send money, link for credit card       
+  payment)\
+  There are minor tweaks to this information here:\
+  Deadline for submissions will be January 2026, so that info will change
+
+  There will be a conference registration fee of $35. That includes lunch, refreshments, a conference badge, keynote
+  speaker, access to a screening of Friday the 13th and the opportunity for participants to submit their conference essay to  
+  our journal, Motion Sickness, vol. 1. Payments could be sent in the form of cash or check to the English Department or by
+  credit card through this link: <JOEY PUT LINK HERE>
+  Or, they can send cash or check to:
+  CSU Stanislaus
+  ATTN: English Department
+  One University Circle
+  Turlock, CA 95382 

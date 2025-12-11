@@ -1,0 +1,11 @@
+Below are general improvements I would like you to make to the design of @index.html
+1. In <div class="hero-content
+<h2>Welcome to the 2026 Media in Full Bloom Conference Information and Registration Page!</h2>
+replace this header with the same text and formatting you used for <h1>.wp-block-site-tile, and then delete the header on the webpage. basically, delete the welcome message and replace it with the header.
+2. The hero content text should be center alligned so the formatting looks more symmetrical with the title and poster.
+3. Each header in the main content of the page should be centered.
+4. Registration Information Should be moved to a different page that will be on our navigatable header you implement in step five.
+5. Implement a navigatable header with a home page, registration information, and contact page. 
+5a. preferabbly, keep this within one html file. if not possible, create and link to other html files.
+5b. Questions section onwards stays on the homepage
+6.Footer should be #11181f all the way across the screen, but it is only in the center and trapped in margins
