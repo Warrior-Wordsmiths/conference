@@ -1,0 +1,266 @@
+/* Site enhancements and reusable presentation utilities. */
+:root {
+    --focus-ring: 3px solid #f4c430;
+    --focus-offset: 3px;
+}
+
+:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-offset);
+}
+
+.main-navigation a:focus-visible,
+.hamburger-menu:focus-visible,
+.cta-button:focus-visible,
+.wp-element-button:focus-visible {
+    outline-color: #ffffff;
+}
+
+.page-section[hidden] {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.section {
+    padding: 60px 40px;
+}
+
+.section--hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.section--muted {
+    background: var(--wp--preset--color--tertiary);
+}
+
+.hero-title {
+    margin-bottom: var(--wp--preset--spacing--50);
+}
+
+.event-details {
+    margin-top: var(--wp--preset--spacing--50);
+}
+
+.event-details p {
+    margin: 0.45rem 0;
+}
+
+.archived-action {
+    color: var(--wp--preset--color--foreground);
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: line-through;
+}
+
+.button-row {
+    margin-top: var(--wp--preset--spacing--60);
+    text-align: center;
+}
+
+.button-row .wp-element-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+.card-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.price-callout {
+    margin: var(--wp--preset--spacing--60) 0;
+    text-align: center;
+}
+
+.price-callout h3 {
+    color: var(--wp--preset--color--primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.price-callout p,
+.lead-copy,
+.contact-email,
+.farewell-message {
+    font-size: 1.1rem;
+}
+
+.payment-address {
+    padding-left: var(--wp--preset--spacing--40);
+}
+
+.payment-option-heading {
+    margin-top: 1.5rem;
+}
+
+.contact-actions,
+.farewell-message,
+.club-links {
+    margin-top: var(--wp--preset--spacing--60);
+}
+
+.contact-email,
+.farewell-message {
+    font-weight: 500;
+}
+
+.contact-email {
+    font-size: 1.2rem;
+    margin: var(--wp--preset--spacing--50) 0;
+}
+
+.conference-info-text p:not(.lead-copy) {
+    max-width: 42rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contact-subtitle {
+    color: var(--wp--preset--color--cta-banner-dark);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: -0.5rem;
+}
+
+.club-links {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-content,
+.footer-content p {
+    color: #ffffff;
+}
+
+.footer-content {
+    padding: var(--wp--preset--spacing--60) 40px;
+}
+
+.journal-section {
+    background: linear-gradient(180deg, #fffdf6 0%, #ffffff 34%);
+}
+
+.previous-events {
+    margin-top: var(--wp--preset--spacing--60);
+}
+
+.previous-events .section-header {
+    margin-bottom: var(--wp--preset--spacing--40);
+}
+
+.previous-events .section-header h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.highlights-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    text-align: left;
+}
+
+.event-highlights-list {
+    margin: 1rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.event-highlights-list li + li {
+    margin-top: 0.35rem;
+}
+
+.journal-introduction {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.journal-layout {
+    display: grid;
+    grid-template-columns: minmax(190px, 300px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    max-width: 900px;
+    margin: var(--wp--preset--spacing--60) auto;
+}
+
+.journal-cover-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: var(--wp--preset--color--background);
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(17, 24, 31, 0.22);
+}
+
+.journal-cover-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.journal-cover-link span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.8rem 1rem;
+    background: rgba(17, 24, 31, 0.92);
+    font-weight: 700;
+    text-align: center;
+}
+
+.journal-reader-panel h2 {
+    margin-top: 0;
+}
+
+.journal-reader-panel {
+    text-align: left;
+}
+
+.journal-reader-panel .wp-element-button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .cta-banner .cta-banner-text {
+        flex: 0 0 auto;
+    }
+
+    .section,
+    .footer-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .button-row .wp-element-button {
+        display: block;
+        width: 100%;
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr;
+        gap: var(--wp--preset--spacing--50);
+    }
+
+    .highlights-list {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-cover-link {
+        width: min(270px, 100%);
+        margin: 0 auto;
+    }
+
+}

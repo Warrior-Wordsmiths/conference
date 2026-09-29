@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Media in Full Bloom 2026 - Conference Information & Registration</title>
+    <title>Media in Full Bloom - Annual Conference</title>
     <link rel="icon" type="image/png" href="assets/BWWS_logo.png">
     <link rel="apple-touch-icon" href="assets/BWWS_logo.png">
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* CSS Variables from Style Guide */
         :root {
@@ -58,6 +59,7 @@
 
         html {
             overflow-x: hidden;
+            overflow-y: auto;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -74,6 +76,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            overflow-y: auto;
             width: 100%;
             min-height: 100vh;
         }
@@ -305,6 +308,23 @@
             display: block;
             width: 100%;
             overflow: hidden;
+        }
+
+        .cta-banner.journal-banner {
+            background: linear-gradient(90deg, #11181f 0%, #263640 100%);
+            color: #ffffff;
+            border-bottom: 3px solid var(--wp--preset--color--cta-banner);
+        }
+
+        .cta-banner.journal-banner .cta-banner-text h3,
+        .cta-banner.journal-banner .cta-banner-text p {
+            color: #ffffff;
+        }
+
+        .cta-banner.journal-banner .cta-button {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: var(--wp--preset--color--primary);
         }
 
         .cta-banner.hidden {
@@ -659,7 +679,7 @@
 
         body {
             position: relative;
-            overscroll-behavior: none;
+            overscroll-behavior-y: auto;
         }
 
         /* Quick action cards */
@@ -799,29 +819,25 @@
 
 <body>
     <div class="wp-site-blocks">
-        <!-- CTA Banner -->
-        <div class="cta-banner">
+        <!-- Motion Sickness CTA Banner -->
+        <div class="cta-banner journal-banner">
             <div class="cta-banner-content">
                 <div class="cta-banner-text">
-                    <h3>Call for Papers Now Open!</h3>
-                    <p>Submit your research by January 19, 2026 - All students welcome</p>
-                </div>
-                <div class="cta-banner-actions">
-                    <a href="#call-for-papers" class="cta-button">Submit Paper</a>
-                    <a href="#registration" class="cta-button secondary nav-link" data-page="registration">Register to Attend</a>
+                    <h3><em>Motion Sickness</em>, Volume 1</h3>
+                    <p>Explore the inaugural issue of our student journal, featuring original work in film, television, and media studies.</p>
                 </div>
             </div>
         </div>
 
         <!-- Navigation Menu -->
         <nav class="main-navigation">
-            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+            <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
                 ☰ Menu
             </button>
-            <ul>
+            <ul id="primary-navigation">
                 <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
-                <li><a href="#registration" class="nav-link" data-page="registration">Registration</a></li>
-                <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a href="#archive" class="nav-link" data-page="archive">Previous Papers</a></li>
+                <li><a href="#contact" class="nav-link" data-page="contact">Bookworms and Wordsmiths</a></li>
             </ul>
         </nav>
 
@@ -830,36 +846,25 @@
             <!-- HOME PAGE -->
             <div class="page-section active" id="home-page">
                 <!-- Hero Section with Poster and Introduction -->
-                <div class="wp-block-group alignfull has-global-padding is-layout-constrained" style="padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px;">
+                <div class="wp-block-group alignfull has-global-padding is-layout-constrained section section--hero">
                     <div class="alignwide">
                         <div class="hero-section">
                             <div class="hero-image">
                                 <img src="assets/mfb_poster.png" alt="Media in Full Bloom Conference Poster">
                             </div>
                             <div class="hero-content">
-                                <h1 class="wp-block-site-title" style="margin-bottom:var(--wp--preset--spacing--50);">Media in Full Bloom 2026</h1>
+                                <h1 class="wp-block-site-title hero-title">Media in Full Bloom</h1>
                                 <p><strong>A Central Valley Interdisciplinary Conference for Graduate and Undergraduate Students on Film, Television, and Media Studies</strong></p>
                                 <p><strong>Sponsored by the Warrior Bookworms & Wordsmiths, the English Club at Stan State</strong></p>
 
-                                <div style="margin-top:var(--wp--preset--spacing--50);">
-                                    <p><strong>Conference Date:</strong> March 13th, 2026</p>
+                                <div class="event-details">
+                                    <p><strong>Conference Date:</strong> Coming Soon!</p>
                                     <p><strong>Location:</strong> Stanislaus State University, Turlock, CA</p>
                                     <p><strong>Contact:</strong> <a href="mailto:Warriorwordsmiths@gmail.com">Warriorwordsmiths@gmail.com</a></p>
-                                    <p><strong>Deadline for Submissions:</strong> January 19, 2026</p>
                                 </div>
 
-                                <!-- Quick Actions -->
+                                <!-- Quick Action -->
                                 <div class="action-cards">
-                                    <div class="action-card">
-                                        <h3>Submit Your Paper</h3>
-                                        <p>Share your research on media! View requirements below.</p>
-                                        <a href="mailto:Warriorwordsmiths@gmail.com?subject=Conference Paper Submission" class="cta-button">Submit Now</a>
-                                    </div>
-                                    <div class="action-card">
-                                        <h3>Register to Attend</h3>
-                                        <p>Join us for presentations, networking, and special screening</p>
-                                        <a href="#registration" class="cta-button nav-link" data-page="registration">Register</a>
-                                    </div>
                                     <div class="action-card">
                                         <h3>Get Information</h3>
                                         <p>Have questions? We're here to help! You can also refer to the contact page.</p>
@@ -871,61 +876,73 @@
                     </div>
                 </div>
 
-
-            <!-- General Information -->
-            <div class="wp-block-group alignfull has-tertiary-background-color has-background has-global-padding is-layout-constrained" style="padding-top:60px;padding-right:40px;padding-bottom:60px;padding-left:40px;">
+            <!-- Conference Overview -->
+            <div class="wp-block-group alignfull has-tertiary-background-color has-background has-global-padding is-layout-constrained section section--muted">
                 <div class="alignwide">
-                    <div class="section-header">
-                        <h2>General Information</h2>
-                    </div>
-
-                    <div class="highlight-box">
-                        <p><strong>Join us for an exciting interdisciplinary conference!</strong> Perfect for both first-time presenters and experienced researchers.</p>
-                    </div>
-
                     <div class="conference-info-section">
                         <div class="conference-info-text">
-                            <p>The Central Valley Conference provides a platform for undergraduate and graduate students to engage with professors and colleagues interested in practical, theoretical, historical, cultural, and pedagogical perspectives on the media we love: movies, documentaries, television series, and online media.</p>
-
-                            <p>The conference will be held on the campus of Stanislaus State University on Friday, March 13th, 2026. The beautiful 228-acre campus is situated in the heart of California's great Central Valley a short distance from the San Francisco Bay Area, Monterey, and Sacramento.</p>
+                            <p>Media in Full Bloom, the Central Valley conference, provides a platform for undergraduate and graduate students to engage with professors and colleagues interested in practical, theoretical, historical, cultural, and pedagogical perspectives on the media we love: movies, documentaries, television series, and online media. The beautiful 228-acre campus is situated in the heart of California's great Central Valley, a short distance from the San Francisco Bay Area, Monterey, and Sacramento.</p>
+                            <ul class="event-highlights-list">
+                                <li>Lunch and refreshments</li>
+                                <li>Conference badge</li>
+                                <li>Keynote address</li>
+                                <li>Special film screening of <em>Friday the 13th</em>, with discussion and themed refreshments</li>
+                            </ul>
                         </div>
                         <div class="conference-info-image">
                             <img src="assets/faculty_development_center.png" alt="Faculty Development Center at Stanislaus State">
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="featured-grid">
-                        <div class="featured-card">
-                            <h3>What's Included</h3>
-                            <ul style="padding-left: 1.5rem; margin: 0; text-align: left;">
-                                <li>Lunch and refreshments</li>
-                                <li>Conference badge</li>
-                                <li>Keynote address</li>
-                                <li>Special film screening</li>
-                            </ul>
-                        </div>
-                        <div class="featured-card">
-                            <h3>Special Screening</h3>
-                            <p>Stay late for a special film screening of <em>Friday the 13th</em> with discussion and themed refreshments!</p>
-                        </div>
-                        <div class="featured-card">
-                            <h3>Get Published</h3>
-                            <p>Select papers will be published in Volume 1 of <em>Motion Sickness</em>, the English Club's annual journal of film and media.</p>
+            <!-- Journal Feature -->
+            <div class="wp-block-group alignfull has-global-padding is-layout-constrained section journal-section home-journal-section">
+                <div class="alignwide">
+                    <div class="section-header">
+                        <div class="section-tagline">Previous Publications</div>
+                        <h2>Motion Sickness, Volume 1</h2>
+                    </div>
+
+                    <div class="journal-layout">
+                        <a class="journal-cover-link" href="Motion%20Sickness%20Web.pdf" target="_blank" rel="noopener" aria-label="Open Motion Sickness, Volume 1 PDF in a new tab">
+                            <img src="assets/motion-sickness-vol-1-cover.png" alt="Cover of Motion Sickness, Volume 1">
+                        </a>
+                        <div class="journal-reader-panel">
+                            <p><a class="wp-element-button" href="Motion%20Sickness%20Web.pdf" target="_blank" rel="noopener">Read the full issue</a></p>
+                            <p><em>Motion Sickness</em>, Volume 1, collects seven essays developed from the inaugural Media in Full Bloom conference at California State University, Stanislaus. Bringing together student scholarship on film, television, adaptation, pedagogy, and popular media, the volume examines how images and narratives shape our understanding of identity, culture, and the world around us. Its title reflects the experience of navigating an increasingly saturated media environment—one marked by acceleration, circulation, uncertainty, and discovery. Together, these essays demonstrate the vitality of emerging scholarship and celebrate the collaborative intellectual community of Stanislaus State.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Call for Papers -->
-            <div id="call-for-papers" class="wp-block-group alignfull has-global-padding is-layout-constrained" style="padding-top:60px;padding-right:40px;padding-bottom:60px;padding-left:40px;">
+            </div>
+
+            <!-- PREVIOUS PAPERS PAGE -->
+            <div class="page-section" id="archive-page" hidden>
+            <div id="motion-sickness" class="wp-block-group alignfull has-global-padding is-layout-constrained section journal-section">
                 <div class="alignwide">
                     <div class="section-header">
-                        <div class="section-tagline">Share Your Research</div>
-                        <h2>Call for Papers</h2>
+                        <div class="section-tagline">Previous Publications</div>
+                        <h1>Motion Sickness, Volume 1</h1>
                     </div>
 
-                    <div class="highlight-box">
-                        <p><strong>Ready to present your work?</strong> We welcome papers from all students on any aspect of film, television, and media studies.</p>
+                    <div class="journal-layout">
+                        <a class="journal-cover-link" href="Motion%20Sickness%20Web.pdf" target="_blank" rel="noopener" aria-label="Open Motion Sickness, Volume 1 PDF in a new tab">
+                            <img src="assets/motion-sickness-vol-1-cover.png" alt="Cover of Motion Sickness, Volume 1">
+                        </a>
+                        <div class="journal-reader-panel">
+                            <p><a class="wp-element-button" href="Motion%20Sickness%20Web.pdf" target="_blank" rel="noopener">Read the full issue</a></p>
+                            <p><em>Motion Sickness</em>, Volume 1, collects seven essays developed from the inaugural Media in Full Bloom conference at California State University, Stanislaus. Bringing together student scholarship on film, television, adaptation, pedagogy, and popular media, the volume examines how images and narratives shape our understanding of identity, culture, and the world around us. Its title reflects the experience of navigating an increasingly saturated media environment—one marked by acceleration, circulation, uncertainty, and discovery. Together, these essays demonstrate the vitality of emerging scholarship and celebrate the collaborative intellectual community of Stanislaus State.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="call-for-papers" class="wp-block-group alignfull has-global-padding is-layout-constrained section">
+                <div class="alignwide">
+                    <div class="section-header">
+                        <div class="section-tagline">2026 Conference Archive</div>
+                        <h2>Previous Calls for Papers</h2>
                     </div>
 
                     <p>The Bookworms invite proposals for papers and panels on all aspects of film, television, and media, both old and new. Topics may include, but are not limited to:</p>
@@ -953,57 +970,43 @@
                             <li>A 250-word abstract</li>
                             <li>A brief (one-page) CV</li>
                         </ul>
-                        <p><strong>Send submissions to:</strong> <a href="mailto:Warriorwordsmiths@gmail.com">Warriorwordsmiths@gmail.com</a></p>
-
                         <p>Finished papers should have a presentation time of 15-18 minutes. We encourage submissions from first-time, undergraduate conference participants as well as seasoned graduate students. The atmosphere is collegial and welcoming; we at Stanislaus State welcome a diversity of opinion, adventurous thinking, and a free and open exchange of ideas.</p>
-
-                        <p><strong>Deadline for submissions: January 19, 2026</strong></p>
 
                         <p>To chair a special session, please submit the session title, a brief description and justification for the session, and 3-4 abstracts (including individual paper titles and CVs) from session participants.</p>
 
                         <p>Submissions will be acknowledged immediately, and acceptance notices will be sent within a week of submission.</p>
                     </div>
 
-                    <div style="text-align: center; margin-top: var(--wp--preset--spacing--60);">
-                        <a href="mailto:Warriorwordsmiths@gmail.com?subject=Conference Paper Submission" class="wp-element-button" style="font-size: 1.1rem; padding: 1rem 2rem;">Submit Your Paper</a>
+                    <div class="button-row">
                     </div>
                 </div>
             </div>
 
-                <!-- Questions Section -->
-                <div class="wp-block-group alignfull has-tertiary-background-color has-background has-global-padding is-layout-constrained" style="padding-top:60px;padding-right:40px;padding-bottom:60px;padding-left:40px;">
-                    <div class="alignwide has-text-align-center">
-                        <div class="section-header">
-                            <h2>Questions?</h2>
-                        </div>
-                        <p style="font-size: 1.1rem;">For more information, contact the English Club at <a href="mailto:Warriorwordsmiths@gmail.com">Warriorwordsmiths@gmail.com</a></p>
-                        <p style="font-size: 1.1rem; font-weight: 500;">We look forward to seeing you at Media in Full Bloom 2026!</p>
-                    </div>
-                </div>
             </div>
 
-            <!-- REGISTRATION PAGE -->
+            <!--
+            REGISTRATION PAGE — retained for future use, currently hidden.
             <div class="page-section" id="registration-page">
-                <div class="wp-block-group alignfull has-global-padding is-layout-constrained" style="padding-top:60px;padding-right:40px;padding-bottom:60px;padding-left:40px;">
+                <div class="wp-block-group alignfull has-global-padding is-layout-constrained section">
                     <div class="alignwide">
                         <div class="section-header">
-                            <div class="section-tagline">Join Us</div>
-                            <h2>Registration Information</h2>
+                            <div class="section-tagline">2026 Conference Archive</div>
+                            <h1>Registration Information</h1>
                         </div>
 
                         <div class="highlight-box">
-                            <p><strong>Secure your spot at Media in Full Bloom 2026!</strong> Registration fee is just $35 and includes lunch, refreshments, keynote access, and special film screening.</p>
+                            <p><strong>Media in Full Bloom 2026 has concluded.</strong> This page preserves the original registration information for the inaugural conference.</p>
                         </div>
 
-                        <div style="text-align: center; margin: var(--wp--preset--spacing--60) 0;">
-                            <h3 style="font-size: 2.5rem; color: var(--wp--preset--color--primary);">$35.00</h3>
-                            <p style="font-size: 1.1rem;">Conference Fee</p>
+                        <div class="price-callout">
+                            <h3>$35.00</h3>
+                            <p>Conference Fee</p>
                         </div>
 
                         <div class="registration-columns">
                             <div class="registration-column">
                                 <h3>Your Registration Includes</h3>
-                                <ul style="text-align: left; padding-left: 1.5rem;">
+                                <ul class="card-list">
                                     <li>Lunch and refreshments</li>
                                     <li>Conference badge</li>
                                     <li>Keynote speaker presentation</li>
@@ -1013,13 +1016,13 @@
                             </div>
 
                             <div class="registration-column">
-                                <h3>Payment Options</h3>
+                                <h3>Original Payment Options</h3>
 
                                 <h4>Option 1: Credit Card</h4>
-                                <p><a href="https://warriorlife.csustan.edu/ENGL/rsvp_boot?id=2293794" target="_blank"> Pay online via credit card</a></p>
-                                <h4 style="margin-top: 1.5rem;">Option 2: Cash or Check</h4>
+                                <p><a href="https://warriorlife.csustan.edu/ENGL/rsvp_boot?id=2293794" class="archived-action" aria-disabled="true" tabindex="-1">Online registration is closed</a></p>
+                                <h4 class="payment-option-heading">Option 2: Cash or Check</h4>
                                 <p>Send cash or check to:</p>
-                                <p style="padding-left:var(--wp--preset--spacing--40);">
+                                <p class="payment-address">
                                     CSU Stanislaus<br>
                                     ATTN: English Department<br>
                                     One University Circle<br>
@@ -1028,57 +1031,36 @@
                             </div>
                         </div>
 
-                        <div style="text-align: center; margin-top: var(--wp--preset--spacing--60);">
-                            <p style="font-size: 1.1rem; margin-bottom: 1rem;">Questions about registration?</p>
-                            <a href="#contact" class="wp-element-button nav-link" data-page="contact" style="font-size: 1.1rem; padding: 1rem 2rem;">Contact Us</a>
+                        <div class="button-row">
+                            <p class="lead-copy">Questions about registration?</p>
+                            <a href="#contact" class="wp-element-button nav-link" data-page="contact">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
+            -->
 
             <!-- CONTACT PAGE -->
             <div class="page-section" id="contact-page">
-                <div class="wp-block-group alignfull has-global-padding is-layout-constrained" style="padding-top:60px;padding-right:40px;padding-bottom:60px;padding-left:40px;">
+                <div class="wp-block-group alignfull has-global-padding is-layout-constrained section">
                     <div class="alignwide has-text-align-center">
                         <div class="section-header">
-                            <div class="section-tagline">Get In Touch</div>
-                            <h2>Contact Us</h2>
+                            <h2>Warrior Bookworms and Wordsmiths</h2>
+                            <p class="contact-subtitle">A Community for Readers, Writers &amp; Creators</p>
                         </div>
 
                         <div class="conference-info-section">
                             <div class="conference-info-text">
-                                <p style="font-size: 1.1rem;">For more information about the Media in Full Bloom 2026 Conference, please contact the English Club:</p>
-
-                                <div style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50);">
-                                    <p style="font-size: 1.2rem;"><strong>Email:</strong> <a href="mailto:Warriorwordsmiths@gmail.com">Warriorwordsmiths@gmail.com</a></p>
-                                </div>
+                                <p class="lead-copy">Warrior Bookworms and Wordsmiths is a Stanislaus State student organization where readers, writers, and media enthusiasts can study and create literature, share ideas, and enjoy everything from books to films and television.</p>
+                                <p>The club welcomes students from every major and creates a relaxed, creative space to build community, nurture curiosity, and take part in literary events on campus.</p>
+                                <p>Warrior Bookworms and Wordsmiths now has <a href="https://warriorlife.csustan.edu/bwandws/home/" target="_blank" rel="noopener noreferrer">its own WarriorLife website</a>, where you can learn more and get involved.</p>
                             </div>
                             <div class="conference-info-image">
                                 <img src="assets/BWWS_logo.png" alt="Warrior Bookworms & Wordsmiths Logo">
                             </div>
                         </div>
 
-                        <div class="info-box">
-                            <h3>Conference Details</h3>
-                            <p><strong>Conference Date:</strong> March 13th, 2026</p>
-                            <p><strong>Location:</strong> Stanislaus State University, Turlock, CA</p>
-                            <p><strong>Deadline for Submissions:</strong> January 19, 2026</p>
-                        </div>
-
-                        <div class="action-cards" style="margin-top: var(--wp--preset--spacing--60);">
-                            <div class="action-card">
-                                <h3>Submit a Paper</h3>
-                                <p>Email your proposal today</p>
-                                <a href="mailto:Warriorwordsmiths@gmail.com?subject=Conference Paper Submission" class="cta-button">Submit Now</a>
-                            </div>
-                            <div class="action-card">
-                                <h3>Register</h3>
-                                <p>Secure your conference spot</p>
-                                <a href="#registration" class="cta-button nav-link" data-page="registration">Register Now</a>
-                            </div>
-                        </div>
-
-                        <p style="margin-top:var(--wp--preset--spacing--60); font-size: 1.2rem; font-weight: 500;">We look forward to seeing you at Media in Full Bloom 2026!</p>
+                        <p class="club-links"><a href="https://warriorlife.csustan.edu/bwandws/home/" target="_blank" rel="noopener noreferrer">Website</a> <span aria-hidden="true">·</span> <a href="https://warriorlife.csustan.edu/bwandws/contact-us/" target="_blank" rel="noopener noreferrer">Contact Us</a> <span aria-hidden="true">·</span> <a href="https://www.instagram.com/warrior_wordsmiths/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
                     </div>
                 </div>
             </div>
@@ -1086,69 +1068,15 @@
 
         <!-- Footer -->
         <footer class="wp-block-template-part">
-            <div class="wp-block-group has-primary-background-color has-background is-layout-constrained" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);color:#ffffff;">
-                <div class="alignwide has-text-align-center" style="color:#ffffff;">
-                    <p style="color:#ffffff;">© 2026 Media in Full Bloom Conference | Stanislaus State University</p>
-                    <p style="color:#ffffff;">Sponsored by the Warrior Bookworms & Wordsmiths, the English Club at Stan State</p>
+            <div class="wp-block-group has-primary-background-color has-background is-layout-constrained footer-content">
+                <div class="alignwide has-text-align-center">
+                    <p>© 2026 Media in Full Bloom Conference | Stanislaus State University</p>
+                    <p>Sponsored by the Warrior Bookworms & Wordsmiths, the English Club at Stan State</p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script>
-        // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pageSections = document.querySelectorAll('.page-section');
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const navMenu = document.querySelector('.main-navigation ul');
-            const ctaBanner = document.querySelector('.cta-banner');
-
-            // Hamburger menu toggle
-            if (hamburgerMenu) {
-                hamburgerMenu.addEventListener('click', function() {
-                    navMenu.classList.toggle('open');
-                });
-            }
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    const targetPage = this.getAttribute('data-page');
-
-                    // Remove active class from all nav links
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-
-                    // Add active class to clicked link
-                    this.classList.add('active');
-
-                    // Hide all page sections
-                    pageSections.forEach(section => section.classList.remove('active'));
-
-                    // Show target page section
-                    const targetSection = document.getElementById(targetPage + '-page');
-                    if (targetSection) {
-                        targetSection.classList.add('active');
-                    }
-
-                    // Show/hide CTA banner based on page
-                    if (targetPage === 'home') {
-                        ctaBanner.classList.remove('hidden');
-                    } else {
-                        ctaBanner.classList.add('hidden');
-                    }
-
-                    // Close mobile menu if open
-                    if (navMenu.classList.contains('open')) {
-                        navMenu.classList.remove('open');
-                    }
-
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
